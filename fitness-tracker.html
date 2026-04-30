@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Трекер SG">
+  <meta name="theme-color" content="#9333ea">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>fitness-tracker</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f7f8fa;
+      --s2: #f0f2f5;
+      --s3: #e8eaef;
+      --text: #131316;
+      --muted: #6b7280;
+      --line: rgba(0,0,0,.08);
+      --shadow: 0 2px 12px rgba(0,0,0,.06);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,.09);
+
+      --c-teal:  #00b4d8;  --c-teal-bg:  #e8f8fc;  --c-teal-text:  #007a94;
+      --c-green: #10b981;  --c-green-bg: #e6f9f3;  --c-green-text: #0a7a58;
+      --c-amber: #f59e0b;  --c-amber-bg: #fef8e6;  --c-amber-text: #9a6200;
+      --c-violet:#7c3aed; --c-violet-bg:#f2eeff; --c-violet-text:#4c1d95;
+      --c-coral: #f43f5e;  --c-coral-bg: #fde8ec;  --c-coral-text: #9f1239;
+      --c-blue:  #3b82f6;  --c-blue-bg:  #eff6ff;  --c-blue-text:  #1d4ed8;
+
+      --radius: 16px;
+      --radius-sm: 10px;
+      --radius-pill: 999px;
+    }
+    [data-theme="dark"]{
+      --bg:#0f1117;--surface:#191c24;--s2:#21242f;--s3:#292d3a;
+      --text:#f0f1f5;--muted:#8b92a5;--line:rgba(255,255,255,.08);
+      --shadow:0 2px 12px rgba(0,0,0,.3);--shadow-lg:0 8px 32px rgba(0,0,0,.4);
+      --c-teal-bg:#0a2d38;--c-green-bg:#073326;--c-amber-bg:#302200;
+      --c-violet-bg:#1e1040;--c-coral-bg:#300d18;--c-blue-bg:#0c1f4a;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Satoshi',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh;}
+    button,input,textarea,select{font:inherit;color:inherit;}
+    button{cursor:pointer;border:none;background:none;}
+
+    .app{max-width:1160px;margin:0 auto;padding:24px 20px 100px;}
+
+    /* ── TOP ── */
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:28px;}
+    .brand{display:flex;align-items:center;gap:10px;}
+    .brand-icon{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--c-teal),var(--c-violet));display:flex;align-items:center;justify-content:center;font-size:20px;}
+    .brand-name{font-weight:700;font-size:18px;letter-spacing:-.02em;}
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;}
+
+    /* ── TABS ── */
+    .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:24px;background:var(--surface);padding:5px;border-radius:14px;width:fit-content;}
+    .tab{border:none;background:transparent;padding:9px 18px;border-radius:10px;font-weight:500;font-size:14px;color:var(--muted);transition:.18s;}
+    .tab:hover{color:var(--text);}
+    .tab.active{background:var(--bg);color:var(--text);font-weight:700;box-shadow:var(--shadow);}
+
+    /* ── LAYOUT ── */
+    .panel{display:none;}.panel.active{display:block;}
+    .two-col{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;}
+    .stack{display:flex;flex-direction:column;gap:16px;}
+
+    /* ── CARDS ── */
+    .card{background:var(--bg);border:1.5px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--shadow);}
+    .card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
+    .section-label{display:flex;align-items:center;gap:10px;}
+    .sect-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+    .sect-icon.teal{background:var(--c-teal-bg);}
+    .sect-icon.green{background:var(--c-green-bg);}
+    .sect-icon.amber{background:var(--c-amber-bg);}
+    .sect-icon.violet{background:var(--c-violet-bg);}
+    .sect-icon.coral{background:var(--c-coral-bg);}
+    .sect-icon.blue{background:var(--c-blue-bg);}
+    .section-label h2{font-size:17px;font-weight:700;letter-spacing:-.02em;}
+    .micro{font-size:13px;color:var(--muted);}
+
+    /* ── INPUTS ── */
+    input[type="text"],input[type="date"],input[type="number"],textarea{
+      width:100%;border:1.5px solid var(--line);background:var(--surface);
+      color:var(--text);border-radius:12px;padding:10px 14px;min-height:42px;font-size:14px;
+      transition:.18s;
+    }
+    input:focus,textarea:focus{outline:none;border-color:var(--c-teal);background:var(--bg);box-shadow:0 0 0 3px rgba(0,180,216,.12);}
+    textarea{min-height:88px;resize:vertical;}
+    .ta-sm{min-height:72px;}
+
+    /* ── BUTTONS ── */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;
+      padding:10px 18px;min-height:40px;border-radius:var(--radius-pill);
+      font-size:14px;font-weight:600;transition:.18s;border:none;cursor:pointer;}
+    .btn:hover{opacity:.88;transform:translateY(-1px);}
+    .btn:active{transform:translateY(0);}
+    .btn.sm{padding:7px 14px;min-height:34px;font-size:13px;}
+    .btn.xs{padding:5px 10px;min-height:28px;font-size:12px;border-radius:8px;}
+
+    .btn-teal{background:var(--c-teal);color:#fff;}
+    .btn-green{background:var(--c-green);color:#fff;}
+    .btn-amber{background:var(--c-amber);color:#fff;}
+    .btn-violet{background:var(--c-violet);color:#fff;}
+    .btn-coral{background:var(--c-coral);color:#fff;}
+    .btn-blue{background:var(--c-blue);color:#fff;}
+    .btn-ghost{background:var(--surface);color:var(--text);border:1.5px solid var(--line);}
+    .btn-ghost:hover{background:var(--s2);}
+    .btn-soft-teal{background:var(--c-teal-bg);color:var(--c-teal-text);}
+    .btn-soft-green{background:var(--c-green-bg);color:var(--c-green-text);}
+    .btn-soft-amber{background:var(--c-amber-bg);color:var(--c-amber-text);}
+    .btn-soft-violet{background:var(--c-violet-bg);color:var(--c-violet-text);}
+    .btn-soft-coral{background:var(--c-coral-bg);color:var(--c-coral-text);}
+    .btn-soft-blue{background:var(--c-blue-bg);color:var(--c-blue-text);}
+
+    /* ── HEADER CARD ── */
+    .hero-card{background:linear-gradient(135deg,#f0fafe 0%,#f5f0ff 50%,#fff8ec 100%);border:1.5px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow);}
+    [data-theme="dark"] .hero-card{background:linear-gradient(135deg,var(--c-teal-bg) 0%,var(--c-violet-bg) 50%,var(--c-amber-bg) 100%);}
+    .hero-card h1{font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-.03em;line-height:1.15;margin-bottom:6px;}
+    .hero-card p{color:var(--muted);font-size:14px;}
+
+    /* ── DATE BAR ── */
+    .datebar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:14px;}
+    input[type="date"]{width:auto;min-width:155px;}
+    .pill{display:inline-flex;align-items:center;background:var(--c-green-bg);color:var(--c-green-text);border-radius:var(--radius-pill);padding:6px 12px;font-size:13px;font-weight:500;}
+
+    /* ── SESSIONS ── */
+    .session-wrap{display:flex;flex-direction:column;gap:12px;}
+    .session-block{border:1.5px solid var(--line);border-radius:18px;overflow:hidden;}
+    .session-header{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      padding:12px 16px;background:var(--surface);
+      border-bottom:1.5px solid var(--line);
+    }
+    .session-title{font-weight:700;font-size:15px;}
+    .session-total{font-size:13px;color:var(--muted);}
+    .session-body{padding:14px;}
+    .ex-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+    .ex-card{border:1.5px solid var(--line);border-radius:14px;padding:12px;background:var(--surface);}
+    .ex-label{font-weight:600;font-size:14px;margin-bottom:8px;color:var(--muted);}
+    .ex-value{font-size:26px;font-weight:700;text-align:center;background:var(--bg);border:1.5px solid var(--line);border-radius:10px;min-height:52px;width:100%;margin-bottom:8px;padding:6px;}
+    .ex-btns{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;}
+    .ex-btns button{border-radius:8px;border:1.5px solid var(--line);background:var(--bg);min-height:36px;font-size:13px;font-weight:600;transition:.15s;}
+    .ex-btns button:hover{background:var(--c-teal-bg);color:var(--c-teal-text);border-color:transparent;}
+    .b-minus{background:var(--c-coral-bg)!important;color:var(--c-coral)!important;border-color:transparent!important;}
+    .b-zero{background:var(--s2)!important;color:var(--muted)!important;}
+    .add-session-row{display:flex;align-items:center;gap:10px;padding-top:12px;}
+
+    /* ── GOALS ── */
+    .goal-list{display:flex;flex-direction:column;gap:10px;}
+    .goal-row{border:1.5px solid var(--line);border-radius:14px;padding:12px;background:var(--surface);}
+    .goal-main{display:grid;grid-template-columns:40px 1fr auto;gap:8px;align-items:center;margin-bottom:8px;}
+    .status-btn{width:40px;height:40px;border-radius:10px;border:1.5px solid var(--line);font-size:20px;display:flex;align-items:center;justify-content:center;background:var(--c-coral-bg);transition:.15s;}
+    .status-btn.done{background:var(--c-green-bg);border-color:transparent;}
+    .goal-name-input{border:0;padding:0;margin:0;background:transparent;font-weight:600;font-size:15px;width:100%;line-height:1.4;white-space:pre-wrap;overflow-wrap:break-word;word-break:break-word;outline:none;cursor:text;min-height:1.4em;}
+    .goal-name-input:focus{outline:none;border-bottom:1.5px solid var(--c-teal);}
+    .goal-details input{background:var(--bg);font-size:13px;}
+
+    /* ── COPY / PREVIEW ── */
+    .copy-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+    .preview{border:1.5px dashed var(--line);border-radius:14px;background:var(--surface);padding:14px;white-space:pre-wrap;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12.5px;min-height:130px;color:var(--muted);}
+
+    /* ── STATS ── */
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;}
+    .stat-card{border:1.5px solid var(--line);border-radius:16px;padding:14px;background:var(--surface);}
+    .stat-card .num{font-size:28px;font-weight:700;margin-top:4px;}
+    .hist-list{display:flex;flex-direction:column;gap:10px;margin-bottom:14px;}
+    .hist-item{border:1.5px solid var(--line);border-radius:14px;padding:12px;background:var(--surface);display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;}
+    .hist-meta{font-size:13px;color:var(--muted);margin-top:2px;}
+
+    .tmpl-grid{display:flex;flex-direction:column;gap:10px;}
+    .tmpl-row{display:grid;grid-template-columns:1fr auto;gap:8px;}
+
+    /* ── TOAST ── */
+    .toast{position:fixed;right:16px;bottom:72px;background:var(--text);color:var(--bg);padding:10px 16px;border-radius:14px;font-size:14px;font-weight:500;opacity:0;transform:translateY(6px);pointer-events:none;transition:.18s ease;z-index:60;}
+    .toast.show{opacity:1;transform:translateY(0);}
+
+    /* ── MOBILE BAR ── */
+    .mobile-bar{position:fixed;left:10px;right:10px;bottom:10px;display:none;gap:8px;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid var(--line);border-radius:18px;padding:8px;box-shadow:var(--shadow-lg);}
+    .mobile-bar .btn{flex:1;min-width:0;padding-inline:8px;font-size:14px;}
+
+    .row{display:flex;gap:8px;flex-wrap:wrap;}
+    .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
+    .muted{color:var(--muted);}
+    hr{border:none;border-top:1.5px solid var(--line);margin:12px 0;}
+
+    @media(max-width:980px){.two-col{grid-template-columns:1fr;}.stat-grid{grid-template-columns:1fr 1fr;}.copy-grid{grid-template-columns:1fr;}}
+    @media(max-width:680px){
+      .ex-grid{grid-template-columns:1fr;}
+      .goal-main{grid-template-columns:40px 1fr;}
+      .goal-btns{grid-column:1/-1;justify-content:flex-end;}
+      .hist-item{grid-template-columns:1fr;}
+      .stat-grid{grid-template-columns:1fr;}
+      .mobile-bar{display:flex;}
+      .copy-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <!-- TOP -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-icon">💪</div>
+      <span class="brand-name">FitnessTracker</span>
+    </div>
+    <div class="toolbar">
+      <button class="btn btn-ghost sm" id="themeBtn">🌙</button>
+      <button class="btn btn-ghost sm" id="todayBtn">Сегодня</button>
+      <button class="btn btn-teal sm" id="saveBtn">Сохранить</button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-card" style="margin-bottom:20px;">
+    <h1>📋 Дневник формы — план, факт и тренировки</h1>
+    <p>Ежедневный трекер упражнений, целей и прогресса. Данные хранятся локально в браузере, резервную копию можно скачать в JSON.</p>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-tab="today">Сегодня</button>
+    <button class="tab" data-tab="history">История</button>
+    <button class="tab" data-tab="backup">Настройки</button>
+  </div>
+
+  <!-- TODAY -->
+  <section class="panel active" id="panel-today">
+    <div class="two-col">
+      <div class="stack">
+
+        <div class="card">
+          <div class="card-head">
+            <div class="section-label"><div class="sect-icon teal">📅</div><h2>День</h2></div>
+          </div>
+          <div class="datebar">
+            <label class="sr-only" for="dayPicker">Дата</label>
+            <input id="dayPicker" type="date" style="width:auto;"/>
+            <span class="pill" id="summaryPill">0/4 обязательных, 0/1 индивидуальных</span>
+          </div>
+          <label class="micro" for="goalText" style="display:block;margin-bottom:6px;">Главная цель</label>
+          <textarea id="goalText" class="ta-sm"></textarea>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="section-label"><div class="sect-icon teal">🔢</div><h2>Упражнения</h2></div>
+          </div>
+          <div id="sessionsWrap" class="session-wrap"></div>
+          <div class="add-session-row">
+            <button class="btn btn-teal sm" id="addSessionBtn">+ Добавить занятие</button>
+            <span class="micro" id="sessionsTotalLabel"></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="section-label"><div class="sect-icon green">🏃‍♀️</div><h2>Обязательные цели</h2></div>
+          </div>
+          <p class="micro" style="margin-bottom:12px;">🏃‍♀️ Обязательные цели — нажми ❌, чтобы отметить выполнение. Ниже — поле для показателей.</p>
+          <div id="mandList" class="goal-list"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="section-label"><div class="sect-icon amber">✨</div><h2>Индивидуальные цели</h2></div>
+            <div class="row">
+              <button class="btn btn-soft-teal sm" id="yesterdayBtn">Со вчера</button>
+              <button class="btn btn-soft-amber sm" id="saveTemplateIndBtn">Сделать шаблоном</button>
+              <button class="btn btn-amber sm" id="addIndBtn">+ Добавить</button>
+            </div>
+          </div>
+          <div id="indList" class="goal-list"></div>
+        </div>
+
+      </div>
+      <div class="stack">
+
+        <div class="card">
+          <div class="card-head"><div class="section-label"><div class="sect-icon blue">📝</div><h2>Сообщения для чатов</h2></div></div>
+          <div class="copy-grid">
+            <button class="btn btn-teal sm" data-copy="exercises">Упражнения</button>
+            <button class="btn btn-violet sm" data-copy="plan">План</button>
+            <button class="btn btn-green sm" data-copy="fact">Факт</button>
+            <button class="btn btn-ghost sm" data-copy="all">Всё сразу</button>
+          </div>
+          <p class="micro" style="margin-bottom:8px;">Предпросмотр:</p>
+          <div class="preview" id="msgPreview"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><div class="section-label"><div class="sect-icon violet">📌</div><h2>План</h2></div></div>
+          <textarea id="planNote" placeholder="Что ты сделаешь сегодня для достижения цели?"></textarea>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><div class="section-label"><div class="sect-icon green">✅</div><h2>Факт</h2></div></div>
+          <textarea id="factNote" placeholder="Что по факту получилось за день?"></textarea>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><div class="section-label"><div class="sect-icon amber">💬</div><h2>Комментарий за день</h2></div></div>
+          <textarea id="commentNote" placeholder="Любые ощущения, заметки, наблюдения…"></textarea>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="panel" id="panel-history">
+    <div class="card">
+      <div class="card-head">
+        <div class="section-label"><div class="sect-icon blue">📚</div><h2>История</h2></div>
+        <button class="btn btn-ghost sm" id="refreshHistBtn">Обновить</button>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="micro">Всего дней</div><div class="num" id="sDays">0</div></div>
+        <div class="stat-card"><div class="micro">Обязательные сегодня</div><div class="num" id="sMand">0/4</div></div>
+        <div class="stat-card"><div class="micro">Индивидуальные сегодня</div><div class="num" id="sInd">0/1</div></div>
+      </div>
+      <div class="card" id="metricsChartCard" style="margin-bottom:16px;">
+        <div class="card-head">
+          <div class="section-label"><div class="sect-icon teal">📈</div><h2>Динамика веса и талии</h2></div>
+          <div class="row">
+            <button class="btn btn-soft-teal sm chart-metric-btn active" data-metric="both">Оба</button>
+            <button class="btn btn-ghost sm chart-metric-btn" data-metric="weight">Вес</button>
+            <button class="btn btn-ghost sm chart-metric-btn" data-metric="waist">Талия</button>
+          </div>
+        </div>
+        <p class="micro" style="margin-bottom:12px;">Данные берутся из поля «Показатели» первой обязательной цели. Формат: <strong>«82 кг / 75 см»</strong> или просто два числа через «/».</p>
+        <div style="position:relative;height:220px;" id="chartWrap">
+          <canvas id="metricsChart"></canvas>
+        </div>
+        <p class="micro" style="margin-top:8px;text-align:center;" id="chartEmpty" hidden>Пока нет данных. Заполни поле «Показатели» в первой обязательной цели.</p>
+      </div>
+      <div id="histList" class="hist-list"></div>
+      <div class="preview" id="histPreview">Выбери день в списке, чтобы увидеть предпросмотр.</div>
+    </div>
+  </section>
+
+  <!-- BACKUP -->
+  <section class="panel" id="panel-backup">
+    <div class="two-col">
+      <div class="stack">
+        <div class="card">
+          <div class="card-head"><div class="section-label"><div class="sect-icon teal">💾</div><h2>Резервная копия</h2></div></div>
+          <p class="micro" style="margin-bottom:14px;">Экспортирует все данные в JSON-файл. Можно импортировать обратно на любом устройстве.</p>
+          <div class="row">
+            <button class="btn btn-teal" id="exportBtn">Экспорт</button>
+            <label class="btn btn-soft-teal" for="importFile" style="cursor:pointer;display:flex;align-items:center;">Импорт</label>
+            <input id="importFile" type="file" accept="application/json" hidden/>
+            <button class="btn btn-soft-coral" id="resetBtn">Сбросить всё</button>
+          
+        <div class="card" style="margin-top:0;">
+          <div class="card-head"><div class="section-label"><div class="sect-icon teal">🔄</div><h2>Sync-код</h2></div></div>
+          <p class="micro" style="margin-bottom:14px;">Позволяет перенести все данные между устройствами без файлов. Просто скопируй код здесь и вставь на другом устройстве.</p>
+          <div class="row" style="margin-bottom:12px;">
+            <button class="btn btn-teal" id="genSyncBtn">Сгенерировать код</button>
+            <button class="btn btn-soft-teal" id="copySyncBtn" hidden>Скопировать код</button>
+          </div>
+          <textarea id="syncCodeOut" placeholder="Нажми «Сгенерировать код» — появится строка для копирования…" style="min-height:72px;font-family:ui-monospace,monospace;font-size:12px;" readonly></textarea>
+          <hr style="margin:16px 0;">
+          <p class="micro" style="margin-bottom:10px;">Загрузить данные с другого устройства:</p>
+          <textarea id="syncCodeIn" placeholder="Вставь сюда sync-код с другого устройства…" style="min-height:72px;font-family:ui-monospace,monospace;font-size:12px;"></textarea>
+          <div style="margin-top:10px;">
+            <button class="btn btn-violet" id="loadSyncBtn">Загрузить по коду</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="stack">
+        <div class="card">
+          <div class="card-head"><div class="section-label"><div class="sect-icon violet">🧩</div><h2>Шаблон для новых дней</h2></div></div>
+          <p class="micro" style="margin-bottom:12px;">Изменения применяются только к новым датам. Старые записи не затрагиваются.</p>
+          <div class="tmpl-grid">
+            <div>
+              <label class="micro" for="tmplGoal" style="display:block;margin-bottom:5px;">Главная цель</label>
+              <textarea id="tmplGoal" class="ta-sm"></textarea>
+            </div>
+            <div>
+              <div class="micro" style="margin-bottom:8px;">Обязательные цели</div>
+              <div id="tmplMandList" class="tmpl-grid"></div>
+            </div>
+            <div>
+              <div class="micro" style="margin-bottom:8px;">Индивидуальные цели</div>
+              <div id="tmplIndList" class="tmpl-grid"></div>
+              <button class="btn btn-soft-amber sm" id="addTmplIndBtn" style="margin-top:8px;">+ Добавить</button>
+            </div>
+            <button class="btn btn-violet" id="saveTmplBtn">Сохранить шаблон</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="mobile-bar">
+  <button class="btn btn-ghost" id="mTodayBtn">Сегодня</button>
+  <button class="btn btn-green" id="mFactBtn">📋 Факт</button>
+  <button class="btn btn-teal" id="mSaveBtn">Сохранить</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const DEFAULT_TPL={goal:'До 1 августа похудеть на 8–10 кг жира, добавить 4–5 кг мышц, улучшить здоровье на 9/10',mandatory:['Сделать взвешивание/талию до воды','Сделать минимум 6 подходов в отказ за день','Отправить КБЖУ за весь день','Отправить количество сожжённых калорий'],individual:['Холодный душ']};
+let S={cur:todayISO(),days:{},tpl:deepClone(DEFAULT_TPL),preview:'plan',theme:matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'};
+let db=null;
+const DB_NAME='ft-db-v4',STORE='kv',KEY='state';
+async function dbOpen(){return new Promise((res,rej)=>{const r=indexedDB.open(DB_NAME,1);r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains(STORE))r.result.createObjectStore(STORE);};r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);});}
+async function dbGet(k){if(!db)return undefined;return new Promise((res,rej)=>{const r=db.transaction(STORE,'readonly').objectStore(STORE).get(k);r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);});}
+async function dbSet(k,v){if(!db)return;return new Promise((res,rej)=>{const r=db.transaction(STORE,'readwrite').objectStore(STORE).put(v,k);r.onsuccess=()=>res();r.onerror=()=>rej(r.error);});}
+function todayISO(){const d=new Date();return new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10);}
+function deepClone(x){return JSON.parse(JSON.stringify(x));}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function fmtDate(iso){const[y,m,d]=iso.split('-').map(Number);return new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'long'}).format(new Date(y,m-1,d));}
+function debounce(fn,ms=300){let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),ms);};}
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(()=>el.classList.remove('show'),1900);}
+function makeSession(){return[0,0,0,0,0,0];}
+function makeGoal(text){return{text,done:false,details:''};}
+function makeDay(date){return{date,goal:S.tpl.goal,sessions:[makeSession()],mandatory:S.tpl.mandatory.map(t=>makeGoal(t)),individual:S.tpl.individual.map(t=>makeGoal(t)),planNote:'',factNote:'',comment:''};}
+function ensureDay(date){
+  if(!S.days[date])S.days[date]=makeDay(date);
+  const d=S.days[date];
+  if(d.exercises&&!d.sessions){d.sessions=[d.exercises.map(Number)];delete d.exercises;}
+  if(!d.sessions||!d.sessions.length)d.sessions=[makeSession()];
+  return d;
+}
+function curDay(){return ensureDay(S.cur);}
+async function save(){try{await dbSet(KEY,{days:S.days,tpl:S.tpl,preview:S.preview,theme:S.theme});}catch(e){}}
+const lazySave=debounce(save,400);
+async function load(){try{const d=await dbGet(KEY);if(!d)return;if(d.days)S.days=d.days;if(d.tpl)S.tpl=d.tpl;if(d.preview)S.preview=d.preview;if(d.theme)S.theme=d.theme;}catch(e){}}
+function sessionTotal(ses){return ses.reduce((a,b)=>a+Number(b||0),0);}
+function sessionApproaches(ses){return ses.filter(v=>Number(v)>0).length;}
+function allApproaches(day){return day.sessions.reduce((a,s)=>a+sessionApproaches(s),0);}
+function allSessionsTotal(day){return day.sessions.reduce((a,s)=>a+sessionTotal(s),0);}
+
+function renderSessions(){
+  const wrap=document.getElementById('sessionsWrap');wrap.innerHTML='';
+  const day=curDay();
+  day.sessions.forEach((ses,si)=>{
+    const block=document.createElement('div');block.className='session-block';
+    const total=sessionTotal(ses);
+    const apps=sessionApproaches(ses);
+    block.innerHTML='<div class="session-header"><div class="row" style="align-items:center;gap:10px;"><span class="session-title">Занятие '+(si+1)+'</span><span class="session-total">Подходов: <strong>'+apps+'</strong> из 6</span></div>'+(day.sessions.length>1?'<button class="btn btn-soft-coral xs" data-rm-session="'+si+'">Удалить</button>':'')+'</div><div class="session-body"><div class="ex-grid" id="exGrid-'+si+'"></div></div>';
+    wrap.appendChild(block);
+    const rmBtn=block.querySelector('[data-rm-session]');
+    if(rmBtn)rmBtn.addEventListener('click',()=>{curDay().sessions.splice(si,1);renderSessions();updateSessionsTotal();renderPreview();lazySave();});
+    renderExGrid(si,ses);
+  });
+  updateSessionsTotal();
+}
+function renderExGrid(si,ses){
+  const grid=document.getElementById('exGrid-'+si);if(!grid)return;grid.innerHTML='';
+  ses.forEach((val,ei)=>{
+    const div=document.createElement('div');div.className='ex-card';
+    div.innerHTML='<div class="ex-label">Упражнение '+(ei+1)+'</div><input class="ex-value" type="number" min="0" step="1" value="'+(val||0)+'" data-si="'+si+'" data-ei="'+ei+'"/><div class="ex-btns"><button class="b-minus" data-si="'+si+'" data-ei="'+ei+'" data-ea="sub1">−1</button><button data-si="'+si+'" data-ei="'+ei+'" data-ea="add1">+1</button><button data-si="'+si+'" data-ei="'+ei+'" data-ea="add5">+5</button><button data-si="'+si+'" data-ei="'+ei+'" data-ea="add10">+10</button><button class="b-zero" data-si="'+si+'" data-ei="'+ei+'" data-ea="zero">0</button></div>';
+    grid.appendChild(div);
+  });
+  grid.querySelectorAll('[data-si]').forEach(el=>{
+    el.addEventListener(el.tagName==='INPUT'?'input':'click',()=>{
+      const s=Number(el.dataset.si),e=Number(el.dataset.ei),day=curDay();
+      if(el.tagName==='INPUT'){day.sessions[s][e]=Math.max(0,Number(el.value)||0);}
+      else{const v=Number(day.sessions[s][e]||0),a=el.dataset.ea;if(a==='sub1')day.sessions[s][e]=Math.max(0,v-1);if(a==='add1')day.sessions[s][e]=v+1;if(a==='add5')day.sessions[s][e]=v+5;if(a==='add10')day.sessions[s][e]=v+10;if(a==='zero')day.sessions[s][e]=0;renderSessions();}
+      updateSessionsTotal();renderPreview();lazySave();
+    });
+  });
+}
+function updateSessionsTotal(){
+  const day=curDay();
+  document.getElementById('sessionsTotalLabel').textContent='Занятий: '+day.sessions.length+' · Подходов всего: '+allApproaches(day)+' · Повторений: '+allSessionsTotal(day);
+}
+function renderGoals(kind){
+  const container=document.getElementById(kind==='mandatory'?'mandList':'indList');container.innerHTML='';
+  curDay()[kind].forEach((g,i)=>{
+    const row=document.createElement('div');row.className='goal-row';
+    row.innerHTML='<div class="goal-main"><button class="status-btn'+(g.done?' done':'')+'" data-kind="'+kind+'" data-i="'+i+'" data-act="toggle">'+(g.done?'✅':'❌')+'</button><div class="goal-name-input" contenteditable="true" data-kind="'+kind+'" data-i="'+i+'" data-act="name">'+esc(g.text)+'</div>'+(kind==='individual'?'<button class="btn btn-soft-coral xs" data-kind="'+kind+'" data-i="'+i+'" data-act="remove">Удалить</button>':'<div></div>')+'</div><div><input type="text" placeholder="Показатели / комментарий" value="'+esc(g.details||'')+'" data-kind="'+kind+'" data-i="'+i+'" data-act="details"/></div>';
+    container.appendChild(row);
+  });
+  container.querySelectorAll('[data-act]').forEach(el=>{
+    el.addEventListener(el.dataset.act==='toggle'?'click':'input',()=>{
+      const k=el.dataset.kind,i=Number(el.dataset.i),day=curDay();
+      if(el.dataset.act==='toggle'){day[k][i].done=!day[k][i].done;renderGoals(k);updatePill();updateStats();renderPreview();lazySave();}
+      if(el.dataset.act==='name'){day[k][i].text=el.contentEditable==='true'?el.innerText.trim():el.value;renderPreview();lazySave();}
+      if(el.dataset.act==='details'){day[k][i].details=el.value;renderPreview();lazySave();}
+      if(el.dataset.act==='remove'){day[k].splice(i,1);renderGoals(k);updatePill();updateStats();renderPreview();lazySave();}
+    });
+  });
+}
+
+function buildMsg(type,day,date){
+  day=day||curDay();date=date||S.cur;
+  const h=fmtDate(date);
+  const exLines=['Упражнения за '+h,''];
+  day.sessions.forEach((ses,si)=>{exLines.push('Занятие '+(si+1)+' — подходов: '+sessionApproaches(ses)+'/6');ses.forEach((v,i)=>exLines.push('  '+(i+1)+' — '+(v||0)));exLines.push('');});
+  exLines.push('Итого подходов за день: '+allApproaches(day));
+  const mLines=goalLines(day.mandatory);
+  const iLines=goalLines(day.individual);
+  const mLinesNoStatus=goalLines(day.mandatory,false);
+  const iLinesNoStatus=goalLines(day.individual,false);
+  const planBody=day.planNote?day.planNote:'';
+  const plan=['План на '+h,'','Цель: '+day.goal,'',...(planBody?[planBody,'']:[]),'🏃‍♀️ Обязательные цели',...mLinesNoStatus,'','✨ Индивидуальные цели',...iLinesNoStatus];
+  const fact=['Факт за '+h,'','🏃‍♀️ Обязательные цели',...mLines,'','✨ Индивидуальные цели',...iLines,...(day.factNote?['','Итог: '+day.factNote]:[]),...(day.comment?['','Комментарий: '+day.comment]:[])];
+  if(type==='exercises')return exLines.join('\n');
+  if(type==='plan')return plan.join('\n');
+  if(type==='fact')return fact.join('\n');
+  return[exLines.join('\n'),'',plan.join('\n'),'',fact.join('\n')].join('\n');
+}
+function goalLines(arr,showStatus=true){if(!arr.length)return['—'];return arr.flatMap((g,i)=>{const status=showStatus?(g.done?'✅ ':''):'';const lines=[(i+1)+'. '+status+(g.text||'Без названия')];if(g.details)lines.push('  Показатели: '+g.details);return lines;});}
+function renderPreview(){document.getElementById('msgPreview').textContent=buildMsg(S.preview);}
+
+
+// ── METRICS CHART ────────────────────────────────────────────────────────────
+let metricsChartInst = null;
+let currentMetric = 'both';
+
+function parseMetrics(detailsStr) {
+  if (!detailsStr) return { weight: null, waist: null };
+  const nums = (detailsStr.match(/\d+[\.,]?\d*/g) || []).map(n => parseFloat(n.replace(',', '.')));
+  return { weight: nums[0] ?? null, waist: nums[1] ?? null };
+}
+
+function renderMetricsChart() {
+  const entries = Object.entries(S.days)
+    .filter(([,d]) => d.mandatory && d.mandatory[0] && d.mandatory[0].details)
+    .sort((a, b) => a[0].localeCompare(b[0]));
+
+  const labels = [], weights = [], waists = [];
+  entries.forEach(([date, day]) => {
+    const m = parseMetrics(day.mandatory[0].details);
+    if (m.weight !== null || m.waist !== null) {
+      labels.push(fmtDate(date));
+      weights.push(m.weight);
+      waists.push(m.waist);
+    }
+  });
+
+  const empty = document.getElementById('chartEmpty');
+  const wrap = document.getElementById('chartWrap');
+  if (!labels.length) {
+    empty.hidden = false; wrap.style.display = 'none'; return;
+  }
+  empty.hidden = true; wrap.style.display = 'block';
+
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const gridColor = isDark ? 'rgba(255,255,255,.08)' : 'rgba(0,0,0,.07)';
+  const textColor = isDark ? '#8b92a5' : '#6b7280';
+
+  const datasets = [];
+  if (currentMetric === 'both' || currentMetric === 'weight') {
+    datasets.push({
+      label: 'Вес (кг)', data: weights, borderColor: '#00b4d8',
+      backgroundColor: 'rgba(0,180,216,.12)', fill: true,
+      tension: 0.4, pointRadius: 5, pointHoverRadius: 7,
+      pointBackgroundColor: '#00b4d8', yAxisID: 'y'
+    });
+  }
+  if (currentMetric === 'both' || currentMetric === 'waist') {
+    datasets.push({
+      label: 'Талия (см)', data: waists, borderColor: '#f59e0b',
+      backgroundColor: 'rgba(245,158,11,.10)', fill: true,
+      tension: 0.4, pointRadius: 5, pointHoverRadius: 7,
+      pointBackgroundColor: '#f59e0b', yAxisID: currentMetric === 'both' ? 'y2' : 'y'
+    });
+  }
+
+  if (metricsChartInst) { metricsChartInst.destroy(); metricsChartInst = null; }
+
+  const ctx = document.getElementById('metricsChart').getContext('2d');
+  const scales = {
+    x: { grid: { color: gridColor }, ticks: { color: textColor, font: { family: 'Satoshi, sans-serif', size: 12 } } },
+    y: { position: 'left', grid: { color: gridColor }, ticks: { color: '#00b4d8', font: { family: 'Satoshi, sans-serif', size: 12 } } }
+  };
+  if (currentMetric === 'both') {
+    scales.y2 = { position: 'right', grid: { drawOnChartArea: false }, ticks: { color: '#f59e0b', font: { family: 'Satoshi, sans-serif', size: 12 } } };
+  }
+
+  metricsChartInst = new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { labels: { color: textColor, font: { family: 'Satoshi, sans-serif', size: 13 }, boxWidth: 12, borderRadius: 4 } },
+        tooltip: { backgroundColor: isDark ? '#21242f' : '#fff', titleColor: isDark ? '#f0f1f5' : '#131316', bodyColor: textColor, borderColor: gridColor, borderWidth: 1, padding: 10, cornerRadius: 10 }
+      },
+      scales
+    }
+  });
+}
+
+function renderHistory(){
+  const entries=Object.entries(S.days).sort((a,b)=>b[0].localeCompare(a[0]));
+  const list=document.getElementById('histList');list.innerHTML='';
+  if(!entries.length){list.innerHTML='<div class="muted micro">Пока нет сохранённых дней.</div>';}
+  entries.forEach(([date,day])=>{
+    ensureDay(date);
+    const item=document.createElement('div');item.className='hist-item';
+    item.innerHTML='<div><strong>'+fmtDate(date)+'</strong><div class="hist-meta">'+summaryText(day)+' · Занятий: '+day.sessions.length+' · Повторений: '+allSessionsTotal(day)+'</div></div><button class="btn btn-soft-teal sm" data-load="'+date+'">Открыть</button>';
+    item.querySelector('[data-load]').addEventListener('click',()=>{flushInputs();S.cur=date;renderDay();document.querySelector('[data-tab="today"]').click();document.getElementById('histPreview').textContent=buildMsg('all',day,date);});
+    list.appendChild(item);
+  });
+  if(entries[0])document.getElementById('histPreview').textContent=buildMsg('all',entries[0][1],entries[0][0]);
+  document.getElementById('sDays').textContent=entries.length;
+  updateStats();
+  renderMetricsChart();
+}
+function renderTemplateEditor(){
+  document.getElementById('tmplGoal').value=S.tpl.goal||'';
+  const ml=document.getElementById('tmplMandList');ml.innerHTML='';
+  S.tpl.mandatory.forEach((t,i)=>{const inp=document.createElement('input');inp.type='text';inp.value=t;inp.dataset.tmplM=i;ml.appendChild(inp);});
+  const il=document.getElementById('tmplIndList');il.innerHTML='';
+  S.tpl.individual.forEach((t,i)=>{const row=document.createElement('div');row.className='tmpl-row';row.innerHTML='<input type="text" value="'+esc(t)+'" data-tmpl-i="'+i+'"/><button class="btn btn-soft-coral xs" data-rm-i="'+i+'">Удалить</button>';row.querySelector('[data-rm-i]').addEventListener('click',()=>{readTmpl();S.tpl.individual.splice(i,1);renderTemplateEditor();});il.appendChild(row);});
+}
+function readTmpl(){S.tpl.goal=document.getElementById('tmplGoal').value.trim()||DEFAULT_TPL.goal;S.tpl.mandatory=Array.from(document.querySelectorAll('[data-tmpl-m]')).map(el=>el.value.trim()||'Цель');S.tpl.individual=Array.from(document.querySelectorAll('[data-tmpl-i]')).map(el=>el.value.trim()||'Цель');if(!S.tpl.individual.length)S.tpl.individual=['Холодный душ'];}
+function countDone(arr){return arr.filter(g=>g.done).length;}
+function summaryText(day){return countDone(day.mandatory)+'/'+day.mandatory.length+' обязательных, '+countDone(day.individual)+'/'+day.individual.length+' индивидуальных';}
+function updatePill(){document.getElementById('summaryPill').textContent=summaryText(curDay());}
+function updateStats(){const d=curDay();document.getElementById('sMand').textContent=countDone(d.mandatory)+'/'+d.mandatory.length;document.getElementById('sInd').textContent=countDone(d.individual)+'/'+d.individual.length;}
+function applyTheme(){document.documentElement.setAttribute('data-theme',S.theme);document.getElementById('themeBtn').textContent=S.theme==='dark'?'☀️':'🌙';}
+function flushInputs(){const d=curDay();d.goal=document.getElementById('goalText').value.trim()||S.tpl.goal;d.planNote=document.getElementById('planNote').value.trim();d.factNote=document.getElementById('factNote').value.trim();d.comment=document.getElementById('commentNote').value.trim();updatePill();renderPreview();}
+function renderDay(){
+  const d=curDay();
+  document.getElementById('dayPicker').value=S.cur;
+  document.getElementById('goalText').value=d.goal||'';
+  document.getElementById('planNote').value=d.planNote||'';
+  document.getElementById('factNote').value=d.factNote||'';
+  document.getElementById('commentNote').value=d.comment||'';
+  updatePill();updateStats();renderSessions();renderGoals('mandatory');renderGoals('individual');renderPreview();
+}
+function renderAll(){renderDay();renderTemplateEditor();}
+function prevDay(cur){return Object.keys(S.days).filter(d=>d<cur).sort().reverse()[0]||null;}
+
+function exportData(){flushInputs();const blob=new Blob([JSON.stringify({days:S.days,tpl:S.tpl},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='fitness-tracker-'+todayISO()+'.json';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(a.href);toast('Резервная копия скачана');}
+async function importData(e){const file=e.target.files[0];if(!file)return;try{const j=JSON.parse(await file.text());if(j.days)S.days=j.days;if(j.tpl)S.tpl=j.tpl;S.cur=todayISO();ensureDay(S.cur);renderAll();await save();toast('Данные импортированы');}catch{toast('Не удалось импортировать файл');}e.target.value='';}
+
+
+// ── SYNC CODE ────────────────────────────────────────────────────────────────
+function genSyncCode() {
+  flushInputs();
+  const payload = JSON.stringify({ days: S.days, tpl: S.tpl });
+  // compress with base64 — use btoa with encodeURIComponent for unicode
+  const code = btoa(encodeURIComponent(payload).replace(/%([0-9A-F]{2})/g,
+    (m, p1) => String.fromCharCode('0x' + p1)));
+  return code;
+}
+
+function loadSyncCode(code) {
+  try {
+    const payload = decodeURIComponent(Array.from(atob(code)).map(
+      c => '%' + c.charCodeAt(0).toString(16).padStart(2, '0')).join(''));
+    const j = JSON.parse(payload);
+    if (!j.days) throw new Error('bad format');
+    if (j.days) S.days = j.days;
+    if (j.tpl) S.tpl = j.tpl;
+    S.cur = todayISO(); ensureDay(S.cur);
+    renderAll(); save();
+    toast('Данные загружены ✓');
+    return true;
+  } catch(e) {
+    toast('Неверный код — проверь и попробуй снова');
+    return false;
+  }
+}
+
+
+function initTAResize(){} // no-op, kept for compat
+function bindEvents(){
+  document.querySelectorAll('[data-tab]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');document.getElementById('panel-'+btn.dataset.tab).classList.add('active');
+      if(btn.dataset.tab==='history')renderHistory();
+      if(btn.dataset.tab==='backup')renderTemplateEditor();
+    });
+  });
+  ['goalText','planNote','factNote','commentNote'].forEach(id=>{document.getElementById(id).addEventListener('input',debounce(()=>{flushInputs();lazySave();},350));});
+  document.getElementById('dayPicker').addEventListener('change',()=>{flushInputs();S.cur=document.getElementById('dayPicker').value||todayISO();ensureDay(S.cur);renderDay();});
+  const goToday=()=>{flushInputs();S.cur=todayISO();ensureDay(S.cur);renderAll();document.querySelector('[data-tab="today"]').click();};
+  document.getElementById('todayBtn').addEventListener('click',goToday);
+  document.getElementById('mTodayBtn').addEventListener('click',goToday);
+  const doSave=async()=>{flushInputs();await save();toast('Сохранено ✓');};
+  document.getElementById('saveBtn').addEventListener('click',doSave);
+  document.getElementById('mSaveBtn').addEventListener('click',doSave);
+  document.getElementById('addSessionBtn').addEventListener('click',()=>{curDay().sessions.push(makeSession());renderSessions();renderPreview();lazySave();toast('Занятие '+(curDay().sessions.length)+' добавлено');});
+  document.querySelectorAll('[data-copy]').forEach(btn=>{
+    btn.addEventListener('click',async()=>{flushInputs();const type=btn.dataset.copy;const text=buildMsg(type);S.preview=type;renderPreview();try{await navigator.clipboard.writeText(text);toast('Скопировано ✓');}catch{toast('Предпросмотр обновлён');}lazySave();});
+  });
+  document.getElementById('mFactBtn').addEventListener('click',async()=>{flushInputs();const text=buildMsg('fact');S.preview='fact';renderPreview();try{await navigator.clipboard.writeText(text);toast('Факт скопирован ✓');}catch{toast('Предпросмотр обновлён');}lazySave();});
+  document.getElementById('addIndBtn').addEventListener('click',()=>{curDay().individual.push(makeGoal('Новая цель'));renderGoals('individual');updatePill();updateStats();lazySave();});
+  document.getElementById('yesterdayBtn').addEventListener('click',()=>{flushInputs();const prev=prevDay(S.cur);if(!prev){toast('Нет предыдущего дня');return;}curDay().individual=S.days[prev].individual.map(g=>makeGoal(g.text));renderGoals('individual');updatePill();updateStats();renderPreview();lazySave();toast('Цели скопированы со вчера');});
+  document.getElementById('saveTemplateIndBtn').addEventListener('click',()=>{flushInputs();S.tpl.individual=curDay().individual.map(g=>g.text||'Цель');renderTemplateEditor();lazySave();toast('Сохранено как шаблон');});
+  document.getElementById('refreshHistBtn').addEventListener('click',renderHistory);
+  document.querySelectorAll('.chart-metric-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      currentMetric=btn.dataset.metric;
+      document.querySelectorAll('.chart-metric-btn').forEach(b=>{b.classList.remove('active','btn-soft-teal');b.classList.add('btn-ghost');});
+      btn.classList.remove('btn-ghost');btn.classList.add('active','btn-soft-teal');
+      renderMetricsChart();
+    });
+  });
+  document.getElementById('exportBtn').addEventListener('click',exportData);
+  document.getElementById('importFile').addEventListener('change',importData);
+  document.getElementById('resetBtn').addEventListener('click',async()=>{if(!confirm('Сбросить все данные? Это действие нельзя отменить.'))return;S.days={};S.tpl=deepClone(DEFAULT_TPL);S.cur=todayISO();ensureDay(S.cur);renderAll();await save();toast('Данные сброшены');});
+  document.getElementById('saveTmplBtn').addEventListener('click',async()=>{readTmpl();await save();toast('Шаблон сохранён');});
+  document.getElementById('addTmplIndBtn').addEventListener('click',()=>{readTmpl();S.tpl.individual.push('Новая цель');renderTemplateEditor();});
+  document.getElementById('genSyncBtn').addEventListener('click',()=>{
+    const code=genSyncCode();
+    const out=document.getElementById('syncCodeOut');
+    out.value=code;
+    document.getElementById('copySyncBtn').hidden=false;
+    toast('Код сгенерирован — скопируй его');
+  });
+  document.getElementById('copySyncBtn').addEventListener('click',async()=>{
+    const code=document.getElementById('syncCodeOut').value;
+    try{await navigator.clipboard.writeText(code);toast('Код скопирован ✓');}
+    catch{toast('Выдели текст в поле и скопируй вручную');}
+  });
+  document.getElementById('loadSyncBtn').addEventListener('click',()=>{
+    const code=document.getElementById('syncCodeIn').value.trim();
+    if(!code){toast('Вставь sync-код в поле выше');return;}
+    if(loadSyncCode(code)){document.getElementById('syncCodeIn').value='';}
+  });
+  document.getElementById('themeBtn').addEventListener('click',()=>{S.theme=S.theme==='dark'?'light':'dark';applyTheme();lazySave();});
+}
+
+async function init(){try{db=await dbOpen();}catch(e){}await load();S.cur=todayISO();ensureDay(S.cur);applyTheme();bindEvents();renderAll();}
+init();
+</script>
+</body>
+</html>
