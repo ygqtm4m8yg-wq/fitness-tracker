@@ -150,7 +150,7 @@
     .goal-main{display:grid;grid-template-columns:40px 1fr auto;gap:8px;align-items:start;margin-bottom:8px;}
     .status-btn{width:40px;height:40px;border-radius:10px;border:1.5px solid var(--line);font-size:20px;display:flex;align-items:center;justify-content:center;background:var(--c-coral-bg);transition:.15s;}
     .status-btn.done{background:var(--c-green-bg);border-color:transparent;}
-    .goal-name-input{border:0;padding:0;background:transparent;font-weight:600;font-size:15px;width:100%;white-space:normal;overflow-wrap:break-word;word-break:break-word;}
+    .goal-name-input{border:0;padding:0;background:transparent;font-weight:600;font-size:15px;width:100%;resize:none;overflow:hidden;line-height:1.4;white-space:pre-wrap;overflow-wrap:break-word;word-break:break-word;}
     .goal-name-input:focus{outline:none;border-bottom:1.5px solid var(--c-teal);}
     .goal-details input{background:var(--bg);font-size:13px;}
 
@@ -474,7 +474,7 @@ function renderGoals(kind){
   const container=document.getElementById(kind==='mandatory'?'mandList':'indList');container.innerHTML='';
   curDay()[kind].forEach((g,i)=>{
     const row=document.createElement('div');row.className='goal-row';
-    row.innerHTML='<div class="goal-main"><button class="status-btn'+(g.done?' done':'')+'" data-kind="'+kind+'" data-i="'+i+'" data-act="toggle">'+(g.done?'✅':'❌')+'</button><input class="goal-name-input" type="text" value="'+esc(g.text)+'" data-kind="'+kind+'" data-i="'+i+'" data-act="name"/>'+(kind==='individual'?'<button class="btn btn-soft-coral xs" data-kind="'+kind+'" data-i="'+i+'" data-act="remove">Удалить</button>':'<div></div>')+'</div><div><input type="text" placeholder="Показатели / комментарий" value="'+esc(g.details||'')+'" data-kind="'+kind+'" data-i="'+i+'" data-act="details"/></div>';
+    row.innerHTML='<div class="goal-main"><button class="status-btn'+(g.done?' done':'')+'" data-kind="'+kind+'" data-i="'+i+'" data-act="toggle">'+(g.done?'✅':'❌')+'</button><textarea class="goal-name-input" rows="1" data-kind="'+kind+'" data-i="'+i+'" data-act="name">'+esc(g.text)+'</textarea>'+(kind==='individual'?'<button class="btn btn-soft-coral xs" data-kind="'+kind+'" data-i="'+i+'" data-act="remove">Удалить</button>':'<div></div>')+'</div><div><input type="text" placeholder="Показатели / комментарий" value="'+esc(g.details||'')+'" data-kind="'+kind+'" data-i="'+i+'" data-act="details"/></div>';
     container.appendChild(row);
   });
   container.querySelectorAll('[data-act]').forEach(el=>{
@@ -492,8 +492,8 @@ function buildMsg(type,day,date){
   day=day||curDay();date=date||S.cur;
   const h=fmtDate(date);
   const exLines=['Упражнения за '+h,''];
-  day.sessions.forEach((ses,si)=>{exLines.push('Занятие '+(si+1)+' — подходов: '+sessionApproaches(ses)+'/6, повторений: '+sessionTotal(ses));ses.forEach((v,i)=>exLines.push('  '+(i+1)+' — '+(v||0)));exLines.push('');});
-  exLines.push('Итого повторений за день: '+allSessionsTotal(day));
+  day.sessions.forEach((ses,si)=>{exLines.push('Занятие '+(si+1)+' — подходов: '+sessionApproaches(ses)+'/6');ses.forEach((v,i)=>exLines.push('  '+(i+1)+' — '+(v||0)));exLines.push('');});
+  exLines.push('Итого подходов за день: '+allApproaches(day));
   const mLines=goalLines(day.mandatory);
   const iLines=goalLines(day.individual);
   const mLinesNoStatus=goalLines(day.mandatory,false);
@@ -664,6 +664,11 @@ function loadSyncCode(code) {
   }
 }
 
+
+// Auto-resize goal name textareas
+function autoResizeTA(ta){ta.style.height='auto';ta.style.height=ta.scrollHeight+'px';}
+document.addEventListener('input',e=>{if(e.target.classList.contains('goal-name-input'))autoResizeTA(e.target);});
+function initTAResize(){document.querySelectorAll('.goal-name-input').forEach(ta=>autoResizeTA(ta));}
 function bindEvents(){
   document.querySelectorAll('[data-tab]').forEach(btn=>{
     btn.addEventListener('click',()=>{
